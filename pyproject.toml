@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnisvg"
+version = "0.1.0"
+description = "A Unified Framework for SVG Generation with Vision-Language Models"
+readme = "README.md"
+authors = [
+    {name = "OmniSVG Team"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.41.0",
+    "accelerate",
+    "datasets",
+    "peft",
+    "bitsandbytes",
+    "svgpathtools",
+    "picosvg",
+    "pillow",
+    "tqdm",
+    "numpy",
+    "matplotlib",
+    "lxml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+    "mypy",
+    "pytest",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
